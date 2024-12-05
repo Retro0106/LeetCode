@@ -19,7 +19,7 @@ class Solution(object):
                 
                 
                 for j in hashmap:
-                    if hashmap[char] == hashmap[j]:
+                    if hashmap[char] == hashmap[j] :
                         curr.append(j)
                         my_set.add(j)
                 res.append(curr)
