@@ -14,13 +14,13 @@ class Solution(object):
 
         for i in range(len(strs)):
             if strs[i] not in my_set:
-                curr = set()
+                curr = []
                 my_set.add(strs[i])
-                curr.add(strs[i])
+                curr.append(strs[i])
                 
                 for j in range(len(strs)):
                     if i != j and hashmap[strs[i]] == hashmap[strs[j]]:
-                        curr.add(strs[j])
+                        curr.append(strs[j])
                         my_set.add(strs[j])
                 res.append(list(curr))
         return res
