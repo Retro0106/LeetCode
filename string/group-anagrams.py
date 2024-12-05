@@ -12,7 +12,7 @@ class Solution(object):
         res = []
         my_set = set()
 
-        for char in hashmap:
+        for char in strs:
             if char not in my_set:
                 curr = [char]
                 my_set.add(char)
