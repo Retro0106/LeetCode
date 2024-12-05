@@ -14,15 +14,15 @@ class Solution(object):
 
         for char in hashmap:
             if char not in my_set:
-                curr = set()
+                curr = [char]
                 my_set.add(char)
-                curr.add(char)
+                
                 
                 for j in hashmap:
-                    if hashmap[char] == hashmap[j]:
-                        curr.add(j)
+                    if hashmap[char] == hashmap[j] and j != char:
+                        curr.append(j)
                         my_set.add(j)
-                res.append(list(curr))
+                res.append(curr)
         return res
 
             
