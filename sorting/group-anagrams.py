@@ -12,17 +12,17 @@ class Solution(object):
         res = []
         my_set = set()
 
-        for char in strs:
-            if char not in my_set:
-                curr = [char]
-                my_set.add(char)
+        for i in range(len(strs)):
+            if strs[i] not in my_set:
+                curr = set()
+                my_set.add(strs[i])
+                curr.add(strs[i])
                 
-                
-                for j in strs:
-                    if hashmap[char] == hashmap[j]:
-                        curr.append(j)
-                        my_set.add(j)
-                res.append(curr)
+                for j in range(len(strs)):
+                    if i != j and hashmap[strs[i]] == hashmap[strs[j]]:
+                        curr.add(strs[j])
+                        my_set.add(strs[j])
+                res.append(list(curr))
         return res
 
             
