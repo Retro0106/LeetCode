@@ -18,7 +18,7 @@ class Solution(object):
                 my_set.add(char)
                 
                 
-                for j in hashmap:
+                for j in strs:
                     if hashmap[char] == hashmap[j] and j!= char :
                         curr.append(j)
                         my_set.add(j)
