@@ -26,5 +26,5 @@ class Solution(object):
             
             hashmap[i] -= 1
             if hashmap[i] == 0:
-                del hashmap[char]
+                del hashmap[i]
         return len(hashmap) == 0
