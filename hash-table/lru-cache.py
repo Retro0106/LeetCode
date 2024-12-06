@@ -54,13 +54,19 @@ class LRUCache(object):
         :type value: int
         :rtype: None
         """
-        if len(self.cache) == self.capacity:
-            self.cache.pop(self.head.right.key)
-            self.remove(self.head.right)
+        if key in self.cache:
+            self.remove(self.cache[key])
+        
         
         node = Node(key,value)
         self.cache[key] = node
         self.insert(node)
+
+        
+        if len(self.cache) > self.capacity:
+            lru = self.head.right  
+            self.remove(lru)
+            del self.cache[lru.key]
             
         
         
