@@ -6,4 +6,11 @@ class Solution(object):
         :type t: str
         :rtype: bool
         """
-        return Counter(s) == Counter(t)
+        # return Counter(s) == Counter(t)
+        hashmap1 = {}
+        hashmap2 = {}
+        for i in s:
+            hashmap1[i] = hashmap1.get(i, 0) + 1
+        for i in t:
+            hashmap2[i] = hashmap2.get(i, 0) + 1
+        return hashmap1 == hashmap2
