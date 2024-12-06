@@ -25,14 +25,22 @@ class Solution(object):
         #         res.append(list(curr))
         # return res
 
+        # hashmap = {}
+        # for char in strs:
+        #     count = [0] * 26
+        #     for letter in char:
+        #         count[ord(letter)-ord('a')] += 1
+        #     key = tuple(count)
+        #     if key in hashmap:
+        #         hashmap[key].append(char)
+        #     else:
+        #         hashmap[key] = [char]
+        # return hashmap.values()
         hashmap = {}
         for char in strs:
-            count = [0] * 26
+            count = [0]*26
             for letter in char:
                 count[ord(letter)-ord('a')] += 1
             key = tuple(count)
-            if key in hashmap:
-                hashmap[key].append(char)
-            else:
-                hashmap[key] = [char]
+            hashmap[key] = hashmap.get(key, []) + [char]
         return hashmap.values()
