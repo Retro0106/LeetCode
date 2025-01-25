@@ -8,7 +8,7 @@ class Solution(object):
             if left[i] != right[i]:
                 return res
             res += left[i]
-        return ""
+        return strs[0]
 
 
 
