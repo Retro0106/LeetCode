@@ -31,6 +31,8 @@ class Solution(object):
         #         return i
         # return x-1
 
+        if x == 0 or x== 1:
+            return x
         right = x
         left = 0
         mid = (left + right) // 2
