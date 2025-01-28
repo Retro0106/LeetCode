@@ -4,8 +4,7 @@ class Solution(object):
         :type x: int
         :rtype: int
         """
-        if x == 0 or x == 1 or x== 2:
-            return x
-        for i in range(x):
+        
+        for i in range(x+1):
             if i * i > x:
                 return i-1
