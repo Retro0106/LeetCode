@@ -13,6 +13,8 @@ class Solution(object):
         #         return i-1
         # return x
 
+        if x == 0 or x== 1:
+            return x
         half = x//2
         for i in range(half+1):
             if i * i > x:
