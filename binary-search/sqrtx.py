@@ -42,7 +42,7 @@ class Solution(object):
             mid = (left + right) // 2
 
             if temp and mid == temp:
-                return mid
+                return mid + 1
             
             if mid * mid == x:
                 return mid
