@@ -16,7 +16,7 @@ class Solution(object):
         if x == 0 or x== 1:
             return x
         half = x//2
-        for i in range(half+1):
+        for i in range(half+2):
             if i * i > x:
                 return i-1
             elif i*i == x:
