@@ -19,5 +19,5 @@ class Solution(object):
                 return i-1
             elif i*i == x:
                 return i
-        return x
+        return x-1
 
