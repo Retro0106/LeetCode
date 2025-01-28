@@ -42,6 +42,8 @@ class Solution(object):
             mid = (left + right) // 2
 
             if temp and mid == temp:
+                if (mid+1) * (mid+1) > x:
+                    return mid 
                 return mid + 1
             
             if mid * mid == x:
