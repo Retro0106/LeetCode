@@ -18,10 +18,12 @@ class Solution(object):
         while ptr1 and ptr2:
             if ptr1 in set2:
                 return ptr1
+            
+            set1.add(ptr1)
+            
             if ptr2 in set1:
                 return ptr2
             
-            set1.add(ptr1)
             set2.add(ptr2)
 
             ptr1 = ptr1.next
