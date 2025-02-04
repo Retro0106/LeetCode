@@ -17,8 +17,7 @@ class Solution(object):
         #             right = i
         # return [left, right]
 
-        if target not in nums:
-            return [-1, -1]
+        
          
         def searchLeft(nums):
             left = 0
@@ -33,6 +32,8 @@ class Solution(object):
                     left = mid + 1
                 elif mid > target:
                     right = mid - 1
+                
+            return -1
             
 
 
@@ -49,5 +50,7 @@ class Solution(object):
                     left = mid + 1
                 elif nums[mid] > target:
                     right = mid - 1
+                
+            return -1
         return [searchLeft(nums), searchRight(nums)]
 
