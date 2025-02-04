@@ -19,11 +19,21 @@ class Solution(object):
 
         
          
+        
         if len(nums) == 1:
             if nums[0] == target:
                 return [0, 0]
             else:
                 return [-1, -1]
+        elif len(nums) == 2:
+            if nums[0] == target and nums[1] == target:
+                return [0,1]
+            elif nums[0] == target:
+                return [0,0]
+            elif nums[1] == target:
+                return [1,1]
+            else:
+                return [-1,-1]
         def searchLeft(nums):
             left = 0
             right = len(nums) - 1
@@ -31,7 +41,7 @@ class Solution(object):
                 mid = (left + right) // 2
                 if nums[mid] == target:
                     right = mid
-                    if right != 0 and nums[right - 1] != target:
+                    if (right != 0 and nums[right - 1] != target) or right == 0:
                         return right
                 elif mid < target:
                     left = mid + 1
@@ -49,7 +59,7 @@ class Solution(object):
                 mid = (left + right) // 2
                 if nums[mid] == target:
                     left = mid
-                    if left != 0 and nums[left + 1] != target:
+                    if (left != len(nums)-1 and nums[left + 1] != target) or left == len(nums) -1:
                         return left
                 elif nums[mid] < target:
                     left = mid + 1
@@ -58,4 +68,3 @@ class Solution(object):
                 
             return -1
         return [searchLeft(nums), searchRight(nums)]
-
