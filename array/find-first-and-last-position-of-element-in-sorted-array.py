@@ -19,6 +19,11 @@ class Solution(object):
 
         
          
+        if len(nums) == 1:
+            if nums[0] == target:
+                return [0, 0]
+            else:
+                return [-1, -1]
         def searchLeft(nums):
             left = 0
             right = len(nums) - 1
