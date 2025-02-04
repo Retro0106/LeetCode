@@ -63,6 +63,8 @@ class Solution(object):
                     left = mid
                     if (left != len(nums)-1 and nums[left + 1] != target) or left == len(nums) -1:
                         return left
+                    elif left != len(nums)-1 and nums[left + 1] == target:
+                        left += 1
                 elif nums[mid] < target:
                     left = mid + 1
                 elif nums[mid] > target:
