@@ -19,6 +19,8 @@ class Solution(object):
 
         
          
+        if not nums:
+            return [-1, -1]
         
         if len(nums) == 1:
             if nums[0] == target:
@@ -43,12 +45,12 @@ class Solution(object):
                     right = mid
                     if (right != 0 and nums[right - 1] != target) or right == 0:
                         return right
-                elif mid < target:
+                elif nums[mid] < target:
                     left = mid + 1
-                elif mid > target:
+                elif nums[mid] > target:
                     right = mid - 1
                 
-            return -1
+            return right if nums[right] == target else -1
             
 
 
@@ -66,5 +68,5 @@ class Solution(object):
                 elif nums[mid] > target:
                     right = mid - 1
                 
-            return -1
+            return left if nums[left] == target else -1
         return [searchLeft(nums), searchRight(nums)]
