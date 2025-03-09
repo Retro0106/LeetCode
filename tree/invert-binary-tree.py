@@ -12,13 +12,13 @@ class Solution:
         
         q = deque()
         q.append(root)
-        
+
         while q:
             node = q.popleft()
-            if node.left and node.right:
-                temp = node.left
-                node.left = node.right
-                node.right = temp
+            
+            temp = node.left
+            node.left = node.right
+            node.right = temp
             
             if node.left:
                 q.append(node.left)
