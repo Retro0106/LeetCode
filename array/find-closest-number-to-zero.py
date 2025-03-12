@@ -4,7 +4,7 @@ class Solution:
         for i in range(len(nums)):
             if nums[0] >= 0:
                 return nums[i]
-            elif nums[i] <= 0:
+            elif nums[i] < 0:
                 continue
             if nums[i] >= 0 and nums[i-1] <= 0:
                 return nums[i]
