@@ -3,7 +3,7 @@ class Solution:
         lowest = prices[0]
         max_profit = 0
         for price in prices:
-            profit = price - lowest
-            max_profit = max(max_profit, profit)
             lowest = min(lowest, price)
+            profit = price - lowest
+            max_profit = max(max_profit, profit) 
         return max_profit
