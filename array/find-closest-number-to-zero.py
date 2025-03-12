@@ -3,6 +3,8 @@ class Solution:
         def maximum(a, b):
             if abs(a) < abs(b):
                 return a
+            elif abs(a) == abs(b):
+                return max(a, b)
             return b
     
         closest = nums[0]
