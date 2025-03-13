@@ -12,6 +12,6 @@ class Solution:
                 if s[i] in q:
                     q.remove(s[i])
                 
-    return hashmap[q[0]] if q else -1
+        return hashmap[q[0]] if q else -1
             
         
