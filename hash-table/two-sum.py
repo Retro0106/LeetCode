@@ -1,32 +1,9 @@
-class Solution(object):
-    def twoSum(self, nums, target):
-       
-        # hashmap = {}
-        # for i, num in enumerate(nums):
-        #     complement = target - num
-        #     if complement in hashmap:
-        #         return [hashmap[complement],i]
-        #     hashmap[num] = i
-        
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashmap = {}
         for i in range(len(nums)):
             complement = target - nums[i]
             if complement in hashmap:
-                return [i,hashmap[complement]]
+                return [hashmap[complement], i]
             hashmap[nums[i]] = i
-        
-
-       
-       
-       
-       
-        # i = 0
-        # lis = [] 
-        # while i < len(nums):
-        #     a = (target - nums[i])
-        #     if a in nums and nums.index(a) != i:
-        #         lis.append(i)
-        #         lis.append(nums.index(a))
-        #         return lis
-        #     i+=1
-        
+        return False
