@@ -11,4 +11,4 @@ class Solution:
             hashmap[char] -= 1
             if hashmap[char] == -1:
                 return False
-        return True
+        return max(hashmap.values()) == 0
