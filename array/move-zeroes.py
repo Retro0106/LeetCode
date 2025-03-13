@@ -11,7 +11,6 @@ class Solution:
                 i += 1
             if nums[j] != 0:
                 nums[i], nums[j] = nums[j], nums[i]
-                i+=1
                 while nums[i] != 0:
                     if i == len(nums) - 1:
                         break
