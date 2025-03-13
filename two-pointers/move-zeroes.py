@@ -9,6 +9,8 @@ class Solution:
                 if i == len(nums) - 1:
                     break
                 i += 1
+            if i > j:
+                break
             if nums[j] != 0:
                 nums[i], nums[j] = nums[j], nums[i]
                 while nums[i] != 0:
