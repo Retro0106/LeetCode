@@ -5,7 +5,7 @@ class Solution:
             negative = True
         integer = abs(x)
         reverse = 0
-        if x >
+        
         while integer > 0:
             curr = integer % 10
             integer = round(integer // 10)
