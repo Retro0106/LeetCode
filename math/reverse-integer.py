@@ -3,5 +3,11 @@ class Solution:
         negative = False
         if x < 0:
             negative = True
-        integer = x
-        while 
+        integer = abs(x)
+        reverse = 0
+        while integer > 0:
+            curr = integer % 10
+            integer = round(integer // 10)
+            reverse = reverse * 10 + curr
+        
+        return -reverse if negative else reverse
