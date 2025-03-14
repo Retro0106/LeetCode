@@ -10,4 +10,6 @@ class Solution:
             integer = round(integer // 10)
             reverse = reverse * 10 + curr
         
+        if x > 2**31-1 or reverse < -2**31-1:
+            return 0
         return -reverse if negative else reverse
