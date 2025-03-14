@@ -22,10 +22,13 @@ class Solution:
                 return False
         
         for i in range(0, len(board), 3):
-            arr = []
-            for j in range(0, len(board[i]), 3):
-                arr.append(board[i][j])
-            if not checker(arr):
-                return False
+            for j in range(0, len(board[0]), 3):
+                arr = []
+                for x in range(3):
+                    for y in range(3):
+                        arr.append(board[i + x][j + y])
+                if not checker(arr):
+                    return False
+
         return True
         
