@@ -8,7 +8,7 @@ class Solution:
                 for key in hashmap:
                     if hashmap[key] > 1 and key != '.':
                         return False
-                return True
+            return True
         
         for i in range(len(board)):
             if not checker(board[i]):
