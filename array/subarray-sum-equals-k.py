@@ -7,6 +7,4 @@ class Solution:
                 summ += nums[j]
                 if summ == k:
                     count += 1
-                elif summ > k:
-                    break
         return count
