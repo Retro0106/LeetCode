@@ -1,21 +1,14 @@
-class Solution(object):
-    def isValid(self, s):
-        count = 0
-        hashmap = {'(':')', '{':'}', '[':']'}
-        
-        def is_open(string):
-            return string in hashmap
-        array = []
+class Solution:
+    def isValid(self, s: str) -> bool:
+        stack = []
+        hashmap = {'[':']','{':'}','(':')'}
 
-        for i in s:
-            if is_open(i):
-                array.append(i)
-            else: 
-                if not array:
-                    return False
-                removed = array.pop()
-                if hashmap[removed] != i:
-                    return False
-        return not array
-        
-        
+        for char in s:
+            if char not in hashmap:
+                if stack:
+                    curr = stack.pop()
+                    if hashmap[curr] != char:
+                        return False
+            else:
+                stack.append(char)
+        return len(stack) == 0
