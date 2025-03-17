@@ -9,6 +9,8 @@ class Solution:
                     curr = stack.pop()
                     if hashmap[curr] != char:
                         return False
+                else:
+                    return False
             else:
                 stack.append(char)
         return len(stack) == 0
