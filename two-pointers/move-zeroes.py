@@ -16,7 +16,9 @@ class Solution:
         #     i += 1
         # return nums
         i = 0
-        while nums[i] != 0 and i < len(nums):
+        while i < len(nums):
+            if nums[i] == 0:
+                break
             i += 1
         if i == len(nums):
             return nums
