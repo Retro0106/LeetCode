@@ -1,6 +1,8 @@
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:
         nums.sort()
+        if 0 not in nums:
+            return 0
         if len(nums) == 1:
             if nums[0] == 0:
                 return 1
