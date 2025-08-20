@@ -1,28 +1,20 @@
-class Solution(object):
-    def topKFrequent(self, nums, k):
-        """
-        :type nums: List[int]
-        :type k: int
-        :rtype: List[int]
-        """
-        # hashmap = {}
-        # output = []
-        # for num in nums:
-        #     if num in hashmap:
-        #         hashmap[num] += 1
-        #     else:
-        #         hashmap[num] = 1
+from collections import Counter
+class Solution:
+    def topKFrequent(self, nums: List[int], k: int) -> List[int]:
+        if len(nums) == 1:
+            return nums
+        hashmap = Counter(nums)
+        bucket = [None] * len(nums)
         
-        # rank = sorted(hashmap.items(), key=lambda x: x[1], reverse=True)
-        # for i in range(k):
-        #     output.append(rank[i][0])
-        # return output
-
-        hashmap = {}
-        for num in nums:
-            hashmap[num] = hashmap.get(num, 0) + 1
-        rank = sorted(hashmap.items(), key=lambda x: x[1], reverse=True)
-        output = []
-        for i in range(k):
-            output.append(rank[i][0])
-        return output
+        for key, value in hashmap.items():
+            bucket[value] = key
+        
+        result = []
+        count = 0
+        for i in range(len(bucket)-1, -1, -1):
+            if bucket[i]:
+                result.append(bucket[i])
+                k -= 1
+            if k == 0:
+                return result
+        
