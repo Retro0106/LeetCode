@@ -14,6 +14,8 @@ class Solution:
                 k -= 1
             elif nums[j] > nums[k]:
                 nums[j], nums[k] = nums[k], nums[j]
+            elif nums[i] > nums[k]:
+                nums[i], nums[k] = nums[k], nums[i]
             j += 1
         return nums
         
