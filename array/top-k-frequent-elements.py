@@ -4,7 +4,7 @@ class Solution:
         if len(nums) == 1:
             return nums
         hashmap = Counter(nums)
-        bucket = [None] * len(nums)
+        bucket = [None] * (len(nums)+1)
         
         for key, value in hashmap.items():
             bucket[value] = key
