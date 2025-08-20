@@ -9,13 +9,11 @@ class Solution:
             if nums[j] == 0:
                 nums[i], nums[j] = nums[j], nums[i]
                 i += 1
+                j += 1
             elif nums[j] == 2:
                 nums[j], nums[k] = nums[k], nums[j]
                 k -= 1
-            elif nums[j] > nums[k]:
-                nums[j], nums[k] = nums[k], nums[j]
-            elif nums[i] > nums[k]:
-                nums[i], nums[k] = nums[k], nums[i]
-            j += 1
+            else:
+                j += 1
         return nums
         
