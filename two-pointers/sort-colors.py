@@ -12,6 +12,8 @@ class Solution:
             elif nums[j] == 2:
                 nums[j], nums[k] = nums[k], nums[j]
                 k -= 1
+            elif nums[j] > nums[k]:
+                nums[j], nums[k] = nums[k], nums[j]
             j += 1
         return nums
         
