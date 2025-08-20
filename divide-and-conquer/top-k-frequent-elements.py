@@ -1,7 +1,7 @@
 from collections import Counter
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        if len(nums) == 1:
+        if len(nums) == k:
             return nums
         hashmap = Counter(nums)
         bucket = [None] * (len(nums)+1)
