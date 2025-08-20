@@ -14,8 +14,5 @@ class Solution:
                 hashmap[key].append(word)
             else:
                 hashmap[key] = [word]
-        lis = []
-        for item in hashmap.values():
-            lis.append(item)
-        return lis
+        return list(hashmap.values())
             
