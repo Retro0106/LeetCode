@@ -13,4 +13,7 @@ class Solution:
                 nums[j], nums[k] = nums[k], nums[j]
                 k -= 1
             j += 1
+        if nums[i] > nums[k]:
+            nums[i], nums[k] = nums[k], nums[i]
         return nums
+        
