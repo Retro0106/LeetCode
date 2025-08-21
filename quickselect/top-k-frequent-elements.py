@@ -11,7 +11,7 @@ class Solution:
                 bucket[value].append(key)
         
         result = []
-        for i in range(len(hashmap),-1,-1):
+        for i in range(len(nums),-1,-1):
             if bucket[i] != 0:
                 result.extend(bucket[i])
                 k-=1
