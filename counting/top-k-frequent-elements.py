@@ -1,20 +1,20 @@
 from collections import Counter
 class Solution:
     def topKFrequent(self, nums: List[int], k: int) -> List[int]:
-        if len(nums) == k:
-            return nums
         hashmap = Counter(nums)
-        bucket = [None] * (len(nums)+1)
+        bucket = [0] * (len(nums)+1)
         
         for key, value in hashmap.items():
-            bucket[value] = key
+            if bucket[value] == 0:
+                bucket[value] = [key]
+            else:
+                bucket[value].append(key)
         
         result = []
-        count = 0
-        for i in range(len(bucket)-1, -1, -1):
-            if bucket[i] is not None:
-                result.append(bucket[i])
-                k -= 1
-            if k == 0:
-                return result
-        
+        for i in range(len(nums),-1,-1):
+            if bucket[i] != 0:
+                result.extend(bucket[i])
+                k-=1
+                if k == 0:
+                    break
+        return result
