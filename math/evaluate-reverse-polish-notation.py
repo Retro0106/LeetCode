@@ -1,30 +1,23 @@
-class Solution(object):
-    def evalRPN(self, tokens):
-        """
-        :type tokens: List[str]
-        :rtype: int
-        """
-        def is_integer(s):
-            try:
-                int(s)
-                return int(s)
-            except ValueError:
-                return False
+class Solution:
+    def evalRPN(self, tokens: List[str]) -> int:
         stack = []
-        for i in tokens:
-            if i.isdigit() or (i[0] == '-' and len(i) > 1):
-                stack.append(int(i))
+        for token in tokens:
+            digit = True
+            try:
+                int(token)
+            except ValueError:
+                digit = False
+            if digit:
+                stack.append(int(token))
             else:
-                b = stack.pop()
-                a = stack.pop()
-                if i == '+':
+                b = int(stack.pop())
+                a = int(stack.pop())
+                if token == "+":
                     stack.append(a+b)
-                elif i == '-':
+                elif token == "-":
                     stack.append(a-b)
-                elif i == '*':
+                elif token == "*":
                     stack.append(a*b)
-                elif i == '/':
-                    stack.append(int(a*b**-1))
-        
+                else:
+                    stack.append(int(a/b))
         return stack[0]
-                
