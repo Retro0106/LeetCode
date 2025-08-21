@@ -14,7 +14,7 @@ class Solution:
         for i in range(len(nums),-1,-1):
             if bucket[i] != 0:
                 result.extend(bucket[i])
-                k-=1
+                k-=len(bucket[i])
                 if k == 0:
                     break
         return result
