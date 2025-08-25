@@ -1,15 +1,17 @@
-import math
-class Solution(object):
-    def kClosest(self, points, k):
-        """
-        :type points: List[List[int]]
-        :type k: int
-        :rtype: List[List[int]]
-        """
-        def distance(arr):
-            return math.sqrt(arr[0]**2 + arr[1]**2)
-        points.sort(key=distance)
-        # res = []
-        # for i in range(k):
-        #     res.append(points[i])
-        return points[:k]
+import heapq
+
+class Solution:
+    def kClosest(self, points: List[List[int]], k: int) -> List[List[int]]:
+        heap = []
+        result = []
+        for point in points:
+            distance = point[0]**2+point[1]**2
+            if len(heap) == k:
+                heapq.heappushpop(heap, [-distance, point])
+            else:
+                heapq.heappush(heap, [-distance, point])
+        
+        for each in heap:
+            result.append(each[1])
+        
+        return result
