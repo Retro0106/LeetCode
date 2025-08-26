@@ -7,6 +7,7 @@ class Solution:
             a,b = dimension
             diagonal = a**2 + b**2
             if diagonal > longest_diagonal:
+                longest_diagonal = diagonal
                 maximum_area = a*b
             elif diagonal == longest_diagonal:
                 maximum_area = max(maximum_area, a*b)
