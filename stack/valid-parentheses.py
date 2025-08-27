@@ -1,16 +1,16 @@
 class Solution:
     def isValid(self, s: str) -> bool:
         stack = []
-        hashmap = {'[':']','{':'}','(':')'}
+        hashmap = {'(':')', '{':'}', '[':']'}
 
         for char in s:
             if char not in hashmap:
                 if stack:
-                    curr = stack.pop()
-                    if hashmap[curr] != char:
+                    a = stack.pop()
+                    if hashmap[a] != char:
                         return False
                 else:
                     return False
             else:
                 stack.append(char)
-        return len(stack) == 0
+        return not stack
