@@ -4,6 +4,8 @@ class Solution:
         j = 0
         if len(s) > len(t):
             return False
+        if not s:
+            return True    
         for j in range(len(t)):
             if t[j] == s[i]:
                 i += 1
