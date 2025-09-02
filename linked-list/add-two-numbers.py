@@ -41,10 +41,10 @@ class Solution:
             curr = curr.next
             lower = lower.next
         
-        # if total >= 10 and rem != 0:
-        #     curr.next = ListNode(rem)
-        #     curr = curr.next
-        # return head
+        if total >= 10 and rem != 0:
+            curr.next = ListNode(rem)
+            curr = curr.next
+        return head
 
 
         # first = ''
