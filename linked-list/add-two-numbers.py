@@ -19,7 +19,9 @@ class Solution:
             second = second * 10 + curr_second.val
             curr_second = curr_second.next
         
-        total = first + second
+        
+        
+        total = int(str(first)[::-1]) + int(str(second)[::-1])
         string = str(total)[::-1]
 
         head = ListNode(int(string[0]))
