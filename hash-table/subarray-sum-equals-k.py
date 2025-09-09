@@ -22,7 +22,8 @@ class Solution:
                 right += 1
             else:
                 right += 1
-                curr += nums[right]
+                if right != len(nums):
+                    curr += nums[right]
 
 
         return count
