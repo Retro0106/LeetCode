@@ -1,10 +1,22 @@
 class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
+        left = 0
+        right = 0
+        curr = nums[left]
         count = 0
-        for i in range(len(nums)):
-            summ = 0
-            for j in range(i, len(nums)):
-                summ += nums[j]
-                if summ == k:
-                    count += 1
+
+        while right < len(nums):
+            while curr > k:
+                curr -= nums[left]
+                left += 1
+
+            if curr == k:
+                count += 1
+                left += 1
+                right += 1
+            else:
+                right += 1
+                curr += nums[right]
+
+
         return count
