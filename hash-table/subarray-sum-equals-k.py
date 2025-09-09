@@ -5,6 +5,12 @@ class Solution:
         curr = nums[left]
         count = 0
 
+        if len(nums) == 1:
+            if nums[0] == k:
+                return 1
+            else:
+                return 0
+
         while right < len(nums):
             while curr > k:
                 curr -= nums[left]
