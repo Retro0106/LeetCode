@@ -28,7 +28,7 @@ class Solution:
         right = prev
         left = head
 
-        while right:
+        while left and right:
             nextLeftNode = left.next
             left.next = right
             left = nextLeftNode
@@ -36,7 +36,7 @@ class Solution:
             nextRightNode = right.next
             right.next = left
             right = nextRightNode
-            
+
         # if left:
         #     right.next = left
         # if right:
