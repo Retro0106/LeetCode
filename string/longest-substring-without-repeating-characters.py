@@ -1,6 +1,6 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if not s:
+        if len(s) < 2:
             return len(s)
         hashSet = set()
 
