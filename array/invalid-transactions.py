@@ -14,7 +14,7 @@ class Solution:
         for i in range(len(parsed)):
             for j in range(i+1, len(parsed)):
                 first = parsed[i]
-                second = parsed[i+1]
+                second = parsed[j]
 
                 if first[0] == second[0] and abs(first[1]-second[1]) <= 60 and first[3] != second[3]:
                     invalid.add(first[4])
