@@ -11,6 +11,7 @@ class Solution:
             if s[right] in hashSet:
                 longest = max(longest, right - left)
                 while s[left] != s[right]:
+                    hashSet.remove(s[left])
                     left += 1
                 left += 1
             
