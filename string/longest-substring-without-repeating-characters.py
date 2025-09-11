@@ -12,9 +12,8 @@ class Solution:
                 longest = max(longest, right - left)
                 while s[left] != s[right]:
                     left += 1
-                
                 left += 1
             
             hashSet.add(s[right])
-        longest = max(longest, right - left)
+        longest = max(longest, right - left+1)
         return longest
