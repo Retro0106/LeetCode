@@ -9,7 +9,7 @@ class Solution:
 
         invalid = set()
         for t in parsed:
-            if t[2] >= 1000:
+            if t[2] > 1000:
                 invalid.add(t[4])
         for i in range(len(parsed)):
             for j in range(i+1, len(parsed)):
