@@ -1,4 +1,3 @@
-from collections import deque
 # Definition for a binary tree node.
 # class TreeNode:
 #     def __init__(self, val=0, left=None, right=None):
@@ -7,22 +6,15 @@ from collections import deque
 #         self.right = right
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
-        if not root:
-            return None
         
-        q = deque()
-        q.append(root)
+        def dfs(node):
+            if not node:
+                return
+            dfs(node.left)
+            dfs(node.right)
+            node.left, node.right = node.right, node.left
+            
+            
 
-        while q:
-            node = q.popleft()
-            
-            temp = node.left
-            node.left = node.right
-            node.right = temp
-            
-            if node.left:
-                q.append(node.left)
-            
-            if node.right:
-                q.append(node.right)
+        dfs(root)
         return root
