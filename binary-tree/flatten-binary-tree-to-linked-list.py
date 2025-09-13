@@ -14,7 +14,7 @@ class Solution:
             if not node:
                 return
             
-            nonlocal array
+            
             array.append(node)
             dfs(node.left)
             dfs(node.right)
@@ -24,9 +24,10 @@ class Solution:
         dfs(root)
 
         for node in array:
-            curr.left = None
+            
             curr.right = node
             curr = curr.right
+            curr.left = None
             
         
         return dummy.right
