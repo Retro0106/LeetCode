@@ -20,5 +20,5 @@ class Solution:
             dfs(node.left, maximum)
             dfs(node.right, maximum)
             
-        dfs(root, 0)
+        dfs(root, float('-inf'))
         return count
