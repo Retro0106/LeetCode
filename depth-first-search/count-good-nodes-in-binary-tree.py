@@ -12,9 +12,10 @@ class Solution:
             nonlocal count
             if not node:
                 return 
-            maximum = max(maximum, node.val)
+            
             if node.val >= maximum:
                 count += 1
+            maximum = max(maximum, node.val)
             
             dfs(node.left, maximum)
             dfs(node.right, maximum)
