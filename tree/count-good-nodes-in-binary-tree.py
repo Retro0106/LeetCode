@@ -9,16 +9,35 @@ class Solution:
         count = 0
 
         def dfs(node, maximum):
-            nonlocal count
             if not node:
-                return 
-            
+                return 0
+            good = False
             if node.val >= maximum:
-                count += 1
+                good = True
             maximum = max(maximum, node.val)
             
-            dfs(node.left, maximum)
-            dfs(node.right, maximum)
+            left = dfs(node.left, maximum)
+            right = dfs(node.right, maximum)
+            return left + right + 1 if good else left + right
+
+        return dfs(root, float('-inf'))
+        
+
+
+
+
+
+        # def dfs(node, maximum):
+        #     nonlocal count
+        #     if not node:
+        #         return 
             
-        dfs(root, float('-inf'))
-        return count
+        #     if node.val >= maximum:
+        #         count += 1
+        #     maximum = max(maximum, node.val)
+            
+        #     dfs(node.left, maximum)
+        #     dfs(node.right, maximum)
+            
+        # dfs(root, float('-inf'))
+        # return count
