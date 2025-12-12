@@ -11,14 +11,17 @@ class Solution:
         def dfs(node, maximum):
             if not node:
                 return 0
-            good = False
-            if node.val >= maximum:
-                good = True
-            maximum = max(maximum, node.val)
             
-            left = dfs(node.left, maximum)
-            right = dfs(node.right, maximum)
-            return left + right + 1 if good else left + right
+            left = dfs(node.left, max(maximum, node.val))
+            right = dfs(node.right, max(maximum, node.val))
+            ans = left + right
+            if node.val >= maximum:
+                ans += 1
+            
+            
+            
+            
+            return ans
 
         return dfs(root, float('-inf'))
         
