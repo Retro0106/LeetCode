@@ -15,9 +15,6 @@ class Solution:
                 return curr + node.val == targetSum
             curr += node.val
             
-            
-            if curr > targetSum:
-                return False
             return dfs(node.left, curr) or dfs(node.right, curr)
         
         return dfs(root, 0)
