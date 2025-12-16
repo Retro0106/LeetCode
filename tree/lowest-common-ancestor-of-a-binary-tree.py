@@ -11,11 +11,11 @@ class Solution:
             if not node:
                 return
             
-
-            left = dfs(node.left)
-            right = dfs(node.right)
             if node == p or node == q:
                 return node
+            left = dfs(node.left)
+            right = dfs(node.right)
+            
 
             if left and right:
                 return node
