@@ -38,10 +38,10 @@ class Solution:
         else:
             right = self.minDepth(root.right)
         
-        if left:
+        if left and not right:
             return 1 + left
         
-        if right:
+        if right and not left:
             return 1 + right
         
         return 1 + min(left, right)
