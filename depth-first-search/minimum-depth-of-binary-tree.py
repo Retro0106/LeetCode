@@ -25,16 +25,23 @@ class Solution:
         if not root.left and not root.right:
             return 1
 
-        left = right = None
-        if root.left:
+        # left = right = None
+        if not root.left:
+            left = None
+            
+        else:
             left = self.minDepth(root.left)
-        if root.right:
+        
+        if not root.right:
+            right = None
+            
+        else:
             right = self.minDepth(root.right)
         
-        if not left:
-            return 1 + right
-        
-        if not right:
+        if left:
             return 1 + left
+        
+        if right:
+            return 1 + right
         
         return 1 + min(left, right)
