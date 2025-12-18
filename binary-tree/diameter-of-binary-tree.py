@@ -11,19 +11,19 @@ class Solution:
         # get no of nodes of right
         # keep track of max diameter(left + right)
         # return max(left, right)
-        maximum = 0
+        self.maximum = 0
         def dfs(node):
-            nonlocal maximum
+            
             if not node:
                 return 0
             left = dfs(node.left)
             right = dfs(node.right)
             diameter = left + right
-            maximum = max(maximum, diameter)
+            self.maximum = max(self.maximum, diameter)
             return 1 + max(left, right)
         
         dfs(root)
-        return maximum
+        return self.maximum
         
         
         
