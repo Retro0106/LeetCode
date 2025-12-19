@@ -12,10 +12,9 @@ class Solution:
         if root.val < low:
             return self.rangeSumBST(root.right, low, high)
         
-        elif root.val > high:
+        if root.val > high:
             return self.rangeSumBST(root.left, low, high)
         
-        else:
-            return root.val + self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
+        return root.val + self.rangeSumBST(root.left, low, high) + self.rangeSumBST(root.right, low, high)
         
         
