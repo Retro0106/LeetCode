@@ -15,18 +15,17 @@ class Solution:
         while queue:
             length = len(queue)
             maximum = float('-inf')
-            for node in queue:
-                if node.val > maximum:
-                    maximum = node.val
-            
-            res.append(maximum)
             
             for _ in range(length):
                 node = queue.popleft()
-
+                if node.val > maximum:
+                    maximum = node.val
                 if node.left:
                     queue.append(node.left)
+                   
                 
                 if node.right:
                     queue.append(node.right)
+                   
+            res.append(maximum)
         return res
