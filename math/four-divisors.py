@@ -1,22 +1,21 @@
 class Solution:
     def sumFourDivisors(self, nums: List[int]) -> int:
-        def compute(num):
-            curr = 0
-            summ = 1 + num
-            i = 2
-            right = num
-            while i < right:
-                if num % i == 0:
-                    curr += 1
-                    right = num // i
-                    if i == right:
-                        return (0,-1)
-                    summ += i + right
-                i += 1
-            return (summ, curr)
-        total = 0
-        for num in nums:
-            current, number = compute(num)
-            if number == 1:
-                total += current
-        return total
+        import math
+
+        def four_div_sum(n):
+            total = 1 + n
+            count = 2  # counting 1 and n
+
+            for i in range(2, int(math.sqrt(n)) + 1):
+                if n % i == 0:
+                    j = n // i
+                    if i == j:          # perfect square → not valid
+                        return 0
+                    count += 2
+                    total += i + j
+                    if count > 4:       # early exit
+                        return 0
+
+            return total if count == 4 else 0
+
+        return sum(four_div_sum(n) for n in nums)
