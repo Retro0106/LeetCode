@@ -4,9 +4,9 @@ class Solution:
         right = len(s)-1
 
         while left < right:
-            while left < right and not s[left].isalpha():
+            while left < right and not s[left].isalnum():
                 left += 1
-            while left < right and not s[right].isalpha():
+            while left < right and not s[right].isalnum():
                 right -= 1
             if left < right:
                 if s[left].lower() != s[right].lower():
