@@ -1,20 +1,40 @@
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:
-        if len(s) < 2:
-            return len(s)
-        hashSet = set()
+    # if given an empty string, return 0
 
-        left = 0
+    # initiliaze an empty set, longest variable
+    #    iterate through the string
+    # check if current element is in my set
+    # keep track of longest at that point and update
+    # inner while loop shifting the left of my window until i remove the duplicate
+    # for loop keeps running until end of the string
+    # update longest
 
         longest = 0
-        for right in range(len(s)):
-            if s[right] in hashSet:
-                longest = max(longest, right - left)
-                while s[left] != s[right]:
-                    hashSet.remove(s[left])
-                    left += 1
-                left += 1
-            
-            hashSet.add(s[right])
-        longest = max(longest, right - left+1)
+        i =  0
+
+        if len(s) == 0:
+            return 0
+        seen = set()
+        
+        for j in range(len(s)):
+            if s[j] in seen:
+                length = j-i
+                longest = max(longest, length)
+                while s[j] in seen:
+                    seen.remove(s[i])
+                    i += 1
+            seen.add(s[j])
+        length = j-i+1
+        longest = max(longest, length)
+
         return longest
+        
+    # "pwwkew"
+    #     i
+    #        j      
+
+    # set -> kew
+    # longest -> 3
+
+
