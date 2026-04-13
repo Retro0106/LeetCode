@@ -18,16 +18,11 @@ class Solution:
         seen = set()
         
         for j in range(len(s)):
-            if s[j] in seen:
-                length = j-i
-                longest = max(longest, length)
-                while s[j] in seen:
-                    seen.remove(s[i])
-                    i += 1
+            while s[j] in seen:
+                seen.remove(s[i])
+                i += 1
             seen.add(s[j])
-        length = j-i+1
-        longest = max(longest, length)
-
+            longest = max(longest, len(seen))
         return longest
         
     # "pwwkew"
