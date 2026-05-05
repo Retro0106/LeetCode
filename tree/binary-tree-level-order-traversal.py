@@ -9,20 +9,31 @@ from collections import deque
 class Solution:
     def levelOrder(self, root: Optional[TreeNode]) -> List[List[int]]:
         
+    #  initialize deque with the root, and result list
+    # while deque:
+    # initialize a new list
+        # for in the range of the length of the deque, 
+        # pop from deque and add the left and right of that node if any to deque and list
+    # add list to result
+    # return result
+
         if not root:
             return []
-        result = [[root.val]]
         queue = deque([root])
+        result = []
+
         while queue:
-            node = queue.popleft()
-            if node.left and node.right:
-                result.append([node.left.val, node.right.val])
-                queue.append(node.left)
-                queue.append(node.right)
-            elif node.left:
-                result.append([node.left.val])
-                queue.append(node.left)
-            elif node.right:
-                result.append([node.right.val])
-                queue.append(node.right)
+            curr = []
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                curr.append(node.val)
+                if node.left:
+                    queue.append(node.left)
+                    
+                if node.right:
+                    queue.append(node.right)
+                    
+            result.append(curr)
         return result
+
+
