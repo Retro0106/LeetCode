@@ -15,9 +15,9 @@ class Solution:
         
         # return dummy.next
 
-        if not head or head.val == val: return None
+        if not head: return None
         dummy = ListNode(next=head)
-        curr = head
+        curr = dummy
         while curr and curr.next:
             if curr.next.val == val:
                 curr.next = curr.next.next
